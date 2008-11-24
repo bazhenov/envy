@@ -22,6 +22,7 @@ public class Vector {
 	private final double xAngle;
 	private final double yAngle;
 	private final float module;
+	private final float angle;
 
 	/**
 	 * @param angle  направляющий угол в градусах
@@ -31,14 +32,19 @@ public class Vector {
 		this.xAngle = toRadians(angle);
 		this.yAngle = toRadians(angle + 90);
 		this.module = module;
+		this.angle = angle;
 	}
 
 	public float getModule() {
 		return module;
 	}
 
+	public float getAngle() {
+		return angle;
+	}
+
 	/**
-	 * Вычисляет координаты конца вектора
+	 * Вычисляет координаты конца вектора приложенного к заданной точке начала
 	 *
 	 * @param point координаты начала вектора
 	 * @return координаты конца вектора

@@ -6,13 +6,13 @@ import org.farpost.geometry.Vector;
 /**
  * Стратегия расчета движения.
  */
-public interface MovementStrategy {
+interface MovementStrategy {
 
 	/**
 	 * Этот метод определяет координаты следующей точки положения игрока
 	 * основываясь на координатах текущего положения.
 	 *
-	 * @param location текужее положение игрока
+	 * @param location текущее положение игрока
 	 * @return координаты его следующего положения
 	 */
 	Point calculateNextPoint(Point location);
@@ -20,7 +20,7 @@ public interface MovementStrategy {
 	/**
 	 * Эта стратегия просто возвращает текущее местоположение игрока
 	 */
-	public static class StayOnPlace implements MovementStrategy {
+	static class StayOnPlace implements MovementStrategy {
 
 		public Point calculateNextPoint(Point location) {
 			return location;
@@ -30,7 +30,7 @@ public interface MovementStrategy {
 	/**
 	 * Стратегия движения "по вектору"
 	 */
-	public class MoveByVector implements MovementStrategy {
+	class MoveByVector implements MovementStrategy {
 
 		private final Vector vector;
 

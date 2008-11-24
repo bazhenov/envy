@@ -1,6 +1,5 @@
 package org.farpost.envy;
 
-import org.farpost.geometry.Point;
 import org.farpost.geometry.Vector;
 
 /**

@@ -9,7 +9,7 @@ public interface WorldRenderer {
 
 	/**
 	 * Обновить визуальное отображение
-	 * @param g2
+	 * @param g2 канвас
 	 */
 	void update(Graphics2D g2);
 }

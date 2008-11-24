@@ -1,7 +1,6 @@
 package org.farpost.geometry;
 
 import static java.lang.Math.sqrt;
-import static java.lang.Math.pow;
 
 /**
  *  ласс описывающий точку в двумерном пространстве.
@@ -35,6 +34,12 @@ public class Point {
 		return new Point(x + dx, y + dy);
 	}
 
+	/**
+	 * ¬ычисл€ет рассто€ние до точки
+	 *
+	 * @param point точка
+	 * @return рассто€ние
+	 */
 	public float getDistanceTo(Point point) {
 		float dy = point.getY() - getY();
 		float dx = point.getX() - getX();
