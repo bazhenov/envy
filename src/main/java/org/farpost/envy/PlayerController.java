@@ -3,30 +3,29 @@ package org.farpost.envy;
 import org.farpost.geometry.Point;
 import org.farpost.geometry.Vector;
 
-import static java.lang.StrictMath.random;
-
+/**
+ * PlayerController является основным управляющий обьектом, который
+ * используется для изменения направления и скорости движения игрока
+ */
 public class PlayerController {
 
-	private volatile Point location;
-	private volatile Vector movementVecor;
+	private final Player player;
 
-	public PlayerController(Point location) {
-		this.location = location;
+	public PlayerController(Player player) {
+		this.player = player;
 	}
 
-	public Point getLocation() {
-		return location;
-	}
-
-	public void move(Point newLocation) {
-		location = newLocation;
-	}
-
-	public Vector getMovementVector() {
-		return movementVecor;
-	}
-
-	public void moveBy(Vector vector) {
-		movementVecor = vector;
+	/**
+	 * Заставляет двигаться игрока по заданному вектору
+	 *
+	 * @param vector вектор движения
+	 * @throws InvalidMovementStrategy в случае если указанная скорость превыжает
+	 *                                 максимально допустимую
+	 */
+	public void moveBy(Vector vector) throws InvalidMovementStrategy {
+		if ( vector.getModule() > player.getMaximumSpeed() ) {
+			throw new InvalidMovementStrategy();
+		}
+		player.setMovementStrategy(new MovementStrategy.MoveByVector(vector));
 	}
 }

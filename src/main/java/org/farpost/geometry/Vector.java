@@ -24,18 +24,28 @@ public class Vector {
 	private final float module;
 
 	/**
-	 * @param angle направляющий угол в градусах
+	 * @param angle  направляющий угол в градусах
 	 * @param module модуль вектора
 	 */
 	public Vector(float angle, float module) {
 		this.xAngle = toRadians(angle);
-		this.yAngle = toRadians(angle+90);
+		this.yAngle = toRadians(angle + 90);
 		this.module = module;
 	}
 
+	public float getModule() {
+		return module;
+	}
+
+	/**
+	 * Вычисляет координаты конца вектора
+	 *
+	 * @param point координаты начала вектора
+	 * @return координаты конца вектора
+	 */
 	public Point calculateEndPoint(Point point) {
-		float dx = ((float)cos(xAngle) * module) + point.getX();
-		float dy = ((float)cos(yAngle) * module) + point.getY();
+		float dx = ((float) cos(xAngle) * module) + point.getX();
+		float dy = ((float) cos(yAngle) * module) + point.getY();
 		return new Point(dx, dy);
 	}
 }

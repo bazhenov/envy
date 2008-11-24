@@ -1,24 +1,20 @@
 package org.farpost.envy.renderer;
 
-import org.farpost.envy.PlayerController;
+import org.farpost.envy.Player;
 
 import java.awt.*;
 import static java.lang.Math.round;
 
 public class AwtWorldRendererImpl implements WorldRenderer {
 
-	private final Iterable<? extends PlayerController> players;
-	private int xOffset = 30;
-	private int yOffset = 30;
-	private int width = 130;
-	private int height = 130;
+	private final Iterable<? extends Player> players;
 
-	public AwtWorldRendererImpl(Iterable<? extends PlayerController> players) {
+	public AwtWorldRendererImpl(java.util.List<Player> players) {
 		this.players = players;
 	}
 
 	public void update(Graphics2D g2) {
-		for ( PlayerController player : players ) {
+		for ( Player player : players ) {
 			org.farpost.geometry.Point location = player.getLocation();
 			int size = 5;
 			int x = round(location.getX());

@@ -5,6 +5,10 @@ import org.farpost.geometry.Vector;
 import static java.lang.Thread.sleep;
 import static java.lang.Math.random;
 
+/**
+ * Простоая имплементация PlayerBehaviour, которая
+ * меняет направление движения игрока каждую секунду
+ */
 public class PlayerBehaviourImpl implements PlayerBehaviour {
 
 	private final PlayerController controller;
@@ -16,9 +20,13 @@ public class PlayerBehaviourImpl implements PlayerBehaviour {
 	public void run() {
 		while ( true ) {
 			float angle = (float)random()*360;
-			controller.moveBy(new Vector(angle, 1));
 			try {
-				sleep(2000);
+				controller.moveBy(new Vector(angle, 1));
+			} catch ( InvalidMovementStrategy e ) {
+				throw new RuntimeException(e);
+			}
+			try {
+				sleep(1000);
 			} catch ( InterruptedException e ) {
 				throw new RuntimeException(e);
 			}

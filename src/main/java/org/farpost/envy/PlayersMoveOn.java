@@ -8,25 +8,25 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class PlayersMoveOn implements Runnable {
 
-	private final Iterable<? extends PlayerController> players;
+	private final Iterable<? extends Player> players;
 	private final List<PlayersEventObserver> observers = new CopyOnWriteArrayList<PlayersEventObserver>();
 
-	public PlayersMoveOn(Iterable<? extends PlayerController> players) {
+	public PlayersMoveOn(List<Player> players) {
 		this.players = players;
 	}
 
 	public void run() {
 		try {
 			while ( true ) {
-				for ( PlayerController player : players ) {
+				for ( Player player : players ) {
 					synchronized ( player ) {
 						Point location = player.getLocation();
-						org.farpost.geometry.Vector speedVector = player.getMovementVector();
-						Point newLocation = speedVector.calculateEndPoint(location);
+						MovementStrategy strategy = player.getMovementStrategy();
+						final Point newLocation = strategy.calculateNextPoint(location);
 						if ( newLocation.getX() < 10 || newLocation.getY() < 10 ) {
 							continue;
 						}
-						player.move(newLocation);
+						player.setLocation(newLocation);
 					}
 				}
 
