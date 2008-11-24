@@ -1,12 +1,13 @@
 package org.farpost.envy;
 
-import org.farpost.geometry.Vector;
 import org.farpost.geometry.Point;
+import org.farpost.geometry.Vector;
+
+import static java.lang.StrictMath.random;
 
 public class Player {
 
 	private volatile Point location;
-	private int x = 0;
 
 	public Player(Point location) {
 		this.location = location;
@@ -22,7 +23,9 @@ public class Player {
 
 	public Vector getSpeedVector() {
 		synchronized ( this ) {
-			return new Vector(90, 2);
+			// генерируем угол -90..90
+			float angle = (float)random()*180f - 90;
+			return new Vector(angle, 2);
 		}
 	}
 }

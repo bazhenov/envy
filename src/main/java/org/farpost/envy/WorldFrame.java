@@ -1,5 +1,7 @@
 package org.farpost.envy;
 
+import org.farpost.envy.renderer.WorldRenderer;
+
 import java.awt.*;
 
 public class WorldFrame extends Frame {

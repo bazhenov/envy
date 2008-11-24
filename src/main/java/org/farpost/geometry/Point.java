@@ -1,5 +1,8 @@
 package org.farpost.geometry;
 
+/**
+ * Класс описывающий точку в двумерном пространстве.
+ */
 public class Point {
 
 	private final float x;
@@ -18,7 +21,13 @@ public class Point {
 		return y;
 	}
 
+	/**
+	 * Перенос точки
+	 * @param dx смещение по оси x
+	 * @param dy смещение по оси y
+	 * @return новая точка
+	 */
 	public Point translate(float dx, float dy) {
-		return new Point(x+dx, y+dy);
+		return new Point(x + dx, y + dy);
 	}
 }
