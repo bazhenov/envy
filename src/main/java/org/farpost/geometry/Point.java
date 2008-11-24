@@ -1,5 +1,8 @@
 package org.farpost.geometry;
 
+import static java.lang.Math.sqrt;
+import static java.lang.Math.pow;
+
 /**
  * Класс описывающий точку в двумерном пространстве.
  */
@@ -23,11 +26,18 @@ public class Point {
 
 	/**
 	 * Перенос точки
+	 *
 	 * @param dx смещение по оси x
 	 * @param dy смещение по оси y
 	 * @return новая точка
 	 */
 	public Point translate(float dx, float dy) {
 		return new Point(x + dx, y + dy);
+	}
+
+	public float getDistanceTo(Point point) {
+		float dy = point.getY() - getY();
+		float dx = point.getX() - getX();
+		return (float) sqrt(dx * dx + dy * dy);
 	}
 }
