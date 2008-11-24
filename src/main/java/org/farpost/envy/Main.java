@@ -8,6 +8,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.*;
 import java.util.List;
+import static java.util.Collections.unmodifiableList;
 
 public class Main extends JFrame {
 
@@ -15,16 +16,19 @@ public class Main extends JFrame {
 	private final Frame frame;
 
 	private Main() throws HeadlessException {
-		List<Player> players = new ArrayList<Player>();
-		for ( int i = 0; i < 50; i++ ) {
-			players.add(new Player(new org.farpost.geometry.Point(100, 100)));
+		List<PlayerController> players = new ArrayList<PlayerController>();
+		for ( int i = 0; i < 100; i++ ) {
+			PlayerController controller = new PlayerController(new org.farpost.geometry.Point(100, 100));
+			PlayerBehaviour behaviour = new PlayerBehaviourImpl(controller);
+			players.add(controller);
+			new Thread(behaviour).start();
 		}
-		List<Player> unmodifiablePlayers = Collections.unmodifiableList(players);
+		List<PlayerController> frozenPlayers = unmodifiableList(players);
 
-		PlayersMoveOn mover = new PlayersMoveOn(unmodifiablePlayers);
+		PlayersMoveOn mover = new PlayersMoveOn(frozenPlayers);
 		movingThread = new Thread(mover, "Players moving thread");
 
-		WorldRenderer renderer = new AwtWorldRendererImpl(unmodifiablePlayers);
+		WorldRenderer renderer = new AwtWorldRendererImpl(frozenPlayers);
 
 		frame = new WorldFrame(renderer, "Events");
 

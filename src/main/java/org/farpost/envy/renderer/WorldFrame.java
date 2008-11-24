@@ -1,10 +1,9 @@
 package org.farpost.envy.renderer;
 
-import org.farpost.envy.renderer.WorldRenderer;
-
+import javax.swing.*;
 import java.awt.*;
 
-public class WorldFrame extends Frame {
+public class WorldFrame extends JFrame {
 
 	private final WorldRenderer renderer;
 
