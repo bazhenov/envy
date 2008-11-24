@@ -1,7 +1,6 @@
 package org.farpost.envy;
 
-import org.farpost.envy.renderer.WorldRenderer;
-import org.farpost.envy.renderer.AwtWorldRendererImpl;
+import org.farpost.envy.renderer.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +16,7 @@ public class Main extends JFrame {
 
 	private Main() throws HeadlessException {
 		List<Player> players = new ArrayList<Player>();
-		for ( int i = 0; i < 100; i++ ) {
+		for ( int i = 0; i < 50; i++ ) {
 			players.add(new Player(new org.farpost.geometry.Point(100, 100)));
 		}
 		List<Player> unmodifiablePlayers = Collections.unmodifiableList(players);

@@ -4,11 +4,12 @@ import org.farpost.geometry.*;
 
 import static java.lang.Thread.sleep;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class PlayersMoveOn implements Runnable {
 
 	private final Iterable<? extends Player> players;
-	private final List<PlayersEventObserver> observers = new ArrayList<PlayersEventObserver>();
+	private final List<PlayersEventObserver> observers = new CopyOnWriteArrayList<PlayersEventObserver>();
 
 	public PlayersMoveOn(Iterable<? extends Player> players) {
 		this.players = players;
@@ -38,16 +39,12 @@ public class PlayersMoveOn implements Runnable {
 	}
 
 	public void registerObserver(PlayersEventObserver observer) {
-		synchronized ( observers ) {
-			observers.add(observer);
-		}
+		observers.add(observer);
 	}
 
 	private void notifyObservers() {
-		synchronized ( observers ) {
-			for ( PlayersEventObserver observer : observers ) {
-				observer.playersChangePosition();
-			}
+		for ( PlayersEventObserver observer : observers ) {
+			observer.playersChangePosition();
 		}
 	}
 }
