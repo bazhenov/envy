@@ -3,7 +3,7 @@ package org.farpost.geometry;
 import static java.lang.Math.sqrt;
 
 /**
- * Класс описывающий точку в двумерном пространстве.
+ * РљР»Р°СЃСЃ РѕРїРёСЃС‹РІР°СЋС‰РёР№ С‚РѕС‡РєСѓ РІ РґРІСѓРјРµСЂРЅРѕРј РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµ.
  */
 public class Point {
 
@@ -24,21 +24,21 @@ public class Point {
 	}
 
 	/**
-	 * Перенос точки
+	 * РџРµСЂРµРЅРѕСЃ С‚РѕС‡РєРё
 	 *
-	 * @param dx смещение по оси x
-	 * @param dy смещение по оси y
-	 * @return новая точка
+	 * @param dx СЃРјРµС‰РµРЅРёРµ РїРѕ РѕСЃРё x
+	 * @param dy СЃРјРµС‰РµРЅРёРµ РїРѕ РѕСЃРё y
+	 * @return РЅРѕРІР°СЏ С‚РѕС‡РєР°
 	 */
 	public Point translate(float dx, float dy) {
 		return new Point(x + dx, y + dy);
 	}
 
 	/**
-	 * Вычисляет расстояние до точки
+	 * Р’С‹С‡РёСЃР»СЏРµС‚ СЂР°СЃСЃС‚РѕСЏРЅРёРµ РґРѕ С‚РѕС‡РєРё
 	 *
-	 * @param point точка
-	 * @return расстояние
+	 * @param point С‚РѕС‡РєР°
+	 * @return СЂР°СЃСЃС‚РѕСЏРЅРёРµ
 	 */
 	public float getDistanceTo(Point point) {
 		float dy = point.getY() - getY();

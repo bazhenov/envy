@@ -6,8 +6,8 @@ import static java.lang.Thread.sleep;
 import static java.lang.Math.random;
 
 /**
- * Простая имплементация PlayerBehaviour, которая
- * меняет направление движения игрока каждую секунду
+ * РџСЂРѕСЃС‚Р°СЏ РёРјРїР»РµРјРµРЅС‚Р°С†РёСЏ PlayerBehaviour, РєРѕС‚РѕСЂР°СЏ
+ * РјРµРЅСЏРµС‚ РЅР°РїСЂР°РІР»РµРЅРёРµ РґРІРёР¶РµРЅРёСЏ РёРіСЂРѕРєР° РєР°Р¶РґСѓСЋ СЃРµРєСѓРЅРґСѓ
  */
 public class PlayerBehaviourImpl implements PlayerBehaviour {
 

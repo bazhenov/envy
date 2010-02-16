@@ -3,13 +3,13 @@ package org.farpost.envy.renderer;
 import java.awt.*;
 
 /**
- * WorldRenderer строит визуальное отображение мира
+ * WorldRenderer СЃС‚СЂРѕРёС‚ РІРёР·СѓР°Р»СЊРЅРѕРµ РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ РјРёСЂР°
  */
 public interface WorldRenderer {
 
 	/**
-	 * Обновить визуальное отображение
-	 * @param g2 канвас
+	 * РћР±РЅРѕРІРёС‚СЊ РІРёР·СѓР°Р»СЊРЅРѕРµ РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ
+	 * @param g2 РєР°РЅРІР°СЃ
 	 */
 	void update(Graphics2D g2);
 }

@@ -1,8 +1,8 @@
 package org.farpost.envy;
 
 /**
- * Обьекты типа PlayerBehaviour описывают поведение
- * отдельного игрока
+ * РћР±СЊРµРєС‚С‹ С‚РёРїР° PlayerBehaviour РѕРїРёСЃС‹РІР°СЋС‚ РїРѕРІРµРґРµРЅРёРµ
+ * РѕС‚РґРµР»СЊРЅРѕРіРѕ РёРіСЂРѕРєР°
  */
 public interface PlayerBehaviour extends Runnable {
 

@@ -3,8 +3,8 @@ package org.farpost.envy;
 import org.farpost.geometry.Vector;
 
 /**
- * PlayerController ÿâëÿåòñÿ îñíîâíûì óïðàâëÿþùèé îáüåêòîì, êîòîðûé
- * èñïîëüçóåòñÿ äëÿ èçìåíåíèÿ íàïðàâëåíèÿ è ñêîðîñòè äâèæåíèÿ èãðîêà
+ * PlayerController ÑÐ²Ð»ÑÐµÑ‚ÑÑ Ð¾ÑÐ½Ð¾Ð²Ð½Ñ‹Ð¼ ÑƒÐ¿Ñ€Ð°Ð²Ð»ÑÑŽÑ‰Ð¸Ð¹ Ð¾Ð±ÑŒÐµÐºÑ‚Ð¾Ð¼, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹
+ * Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÑ‚ÑÑ Ð´Ð»Ñ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ½Ð¸Ñ Ð½Ð°Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ñ Ð¸ ÑÐºÐ¾Ñ€Ð¾ÑÑ‚Ð¸ Ð´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ñ Ð¸Ð³Ñ€Ð¾ÐºÐ°
  */
 public class PlayerController {
 
@@ -15,11 +15,11 @@ public class PlayerController {
 	}
 
 	/**
-	 * Çàñòàâëÿåò äâèãàòüñÿ èãðîêà ïî çàäàííîìó âåêòîðó
+	 * Ð—Ð°ÑÑ‚Ð°Ð²Ð»ÑÐµÑ‚ Ð´Ð²Ð¸Ð³Ð°Ñ‚ÑŒÑÑ Ð¸Ð³Ñ€Ð¾ÐºÐ° Ð¿Ð¾ Ð·Ð°Ð´Ð°Ð½Ð½Ð¾Ð¼Ñƒ Ð²ÐµÐºÑ‚Ð¾Ñ€Ñƒ
 	 *
-	 * @param vector âåêòîð äâèæåíèÿ
-	 * @throws InvalidMovementStrategy â ñëó÷àå åñëè óêàçàííàÿ ñêîðîñòü ïðåâûæàåò
-	 *                                 ìàêñèìàëüíî äîïóñòèìóþ
+	 * @param vector Ð²ÐµÐºÑ‚Ð¾Ñ€ Ð´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ñ
+	 * @throws InvalidMovementStrategy Ð² ÑÐ»ÑƒÑ‡Ð°Ðµ ÐµÑÐ»Ð¸ ÑƒÐºÐ°Ð·Ð°Ð½Ð½Ð°Ñ ÑÐºÐ¾Ñ€Ð¾ÑÑ‚ÑŒ Ð¿Ñ€ÐµÐ²Ñ‹Ð¶Ð°ÐµÑ‚
+	 *                                 Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾ Ð´Ð¾Ð¿ÑƒÑÑ‚Ð¸Ð¼ÑƒÑŽ
 	 */
 	public void moveBy(Vector vector) throws InvalidMovementStrategy {
 		if ( vector.getModule() > player.getMaximumSpeed() ) {
